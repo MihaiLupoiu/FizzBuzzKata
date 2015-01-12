@@ -32,6 +32,9 @@ class Test(unittest.TestCase):
     def test_44_OnlyFizzBuzz(self):
         self.assertEqual(fizzBuzz(44), 44, "44 check faild")
     
+    def test_vector_FizzBuzz(self):
+        self.assertListEqual(FizzBuzzRange([1, 6, 4, 58, 15]), [1, 'Fizz', 4,'Buzz', 'FizzBuzz'], "list check faild")
+    
     def test_10_FizzBuzz(self):
         result = FizzBuzzIncrementalRange(1, 10);
         self.assertListEqual(result, resultValue[0:10], "10 check faild")
@@ -43,9 +46,6 @@ class Test(unittest.TestCase):
     def test_30_FizzBuzz(self):
         result = FizzBuzzIncrementalRange(1, 40);
         self.assertListEqual(result, resultValue, "40 check faild")
-    
-    def test_vector_FizzBuzz(self):
-        self.assertListEqual(FizzBuzzRange([1, 6, 4, 58, 15]), [1, 'Fizz', 4,'Buzz', 'FizzBuzz'], "list check faild")
 
     def test_100_FizzBuzz(self):
         result = FizzBuzzIncrementalRange(1, 100);
