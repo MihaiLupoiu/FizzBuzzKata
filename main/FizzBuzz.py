@@ -3,26 +3,35 @@ Created on 1/1/2015
 
 @author: myhay
 '''
+lista_factores = [(3,"Fizz"),(5,"Buzz")]
 
-def fizzBuzz(number):
-    if (number %15  == 0):
-        return "FizzBuzz"
-    elif  (number%3 == 0) or ("3" in str(number)):
-        return "Fizz"
-    elif  (number%5 == 0) or ("5" in str(number)):
-        return "Buzz"
-    else:
-        return number
+def addFactors(numero,palabra):
+    lista_factores.append((numero,palabra))
+    
+def getListaFactores():
+    return lista_factores
 
 
-def FizzBuzzRange(lista):
-    result = []
-    for i in lista:
-            result.append(fizzBuzz(i))
-    return result
+def fizzBuzz(numero):
+    respuesta = ""
+    
+    for divisor, respuesta_factor in lista_factores:
+        if  (numero%divisor == 0) or (str(divisor) in str(numero)):
+            respuesta += respuesta_factor
+    
+    if (respuesta == ""):
+        return numero
+    return respuesta
+
+
+def FizzBuzzRange(lista_numero):
+    lista_respuesta = []
+    for i in lista_numero:
+            lista_respuesta.append(fizzBuzz(i))
+    return lista_respuesta
 
 def FizzBuzzIncrementalRange(start, fin):
-    result = []
+    lista_respuesta = []
     for i in range(start,fin+1):
-            result.append(fizzBuzz(i))
-    return result
+            lista_respuesta.append(fizzBuzz(i))
+    return lista_respuesta
